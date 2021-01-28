@@ -1,4 +1,4 @@
-# Hey I'm Jacob 👋
+# Hey there, I'm Jacob 👋
 [![Twitter Follow](https://img.shields.io/twitter/follow/{{ twitter_username }}?style=social)](https://twitter.com/{{ twitter_username }})
 
 ## Blog
