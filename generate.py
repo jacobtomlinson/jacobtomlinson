@@ -13,7 +13,7 @@ with open("config.yaml") as f:
     config = yaml.load(f, Loader=yaml.FullLoader)
 
 # Get latest blog post
-blog_rss = feedparser.parse("https://www.jacobtomlinson.co.uk/feed.xml")
+blog_rss = feedparser.parse("https://jacobtomlinson.dev/posts/feed.xml")
 config["latest_blog_posts"] = blog_rss["entries"][0:5]
 for post in config["latest_blog_posts"]:
     post["published"] = datetime.strptime(post["published"], "%a, %d %b %Y %H:%M:%S %z")
