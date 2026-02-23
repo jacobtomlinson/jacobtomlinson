@@ -1,3 +1,11 @@
+# /// script
+# requires-python = ">=3.12"
+# dependencies = [
+#     "feedparser",
+#     "jinja2",
+#     "pyyaml",
+# ]
+# ///
 import jinja2
 import yaml
 import feedparser

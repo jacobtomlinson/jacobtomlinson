@@ -11,24 +11,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repo
-        uses: actions/checkout@v2
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.8
-      - uses: actions/cache@v4
-        name: Configure pip caching
-        with:
-          path: ~/.cache/pip
-          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
-          restore-keys: |
-            ${{ runner.os }}-pip-
-      - name: Install Python dependencies
-        run: |
-          python -m pip install -r requirements.txt
+        uses: actions/checkout@v4
+      - name: Set up uv
+        uses: astral-sh/setup-uv@v5
       - name: Update README
         run: |-
-          python generate.py > README.md
+          uv run generate.py > README.md
           cat README.md
       - name: Commit and push if changed
         run: |-
